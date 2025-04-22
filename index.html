@@ -36,6 +36,11 @@
     nav a:hover {
       color: #64b5f6;
     }
+    nav a.active {
+      color: #64b5f6;
+      border-bottom: 2px solid #64b5f6;
+      padding-bottom: 3px;
+    }
     .container {
       display: flex;
       flex: 1;
@@ -118,6 +123,106 @@
       background: #e0e0e0;
       transform: translateY(-2px);
     }
+    
+    /* Publications Section */
+    .publications-section {
+      background-color: #1e293b;
+      padding: 4rem 2rem;
+    }
+    .section-title {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      margin-bottom: 2.5rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(to right, #64b5f6, #2196f3);
+    }
+    .publications-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .publication-year {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1.5rem;
+      color: #64b5f6;
+      border-left: 4px solid #64b5f6;
+      padding-left: 1rem;
+    }
+    .publication-card {
+      display: flex;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .publication-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .publication-image {
+      flex: 0 0 250px;
+      overflow: hidden;
+    }
+    .publication-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .publication-card:hover .publication-image img {
+      transform: scale(1.1);
+    }
+    .publication-content {
+      flex: 1;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .publication-text {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .publication-text b {
+      color: #64b5f6;
+    }
+    .publication-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .pub-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(33, 150, 243, 0.1);
+      border-radius: 4px;
+      text-decoration: none;
+      color: white;
+      transition: background 0.3s ease;
+    }
+    .pub-link:hover {
+      background: rgba(33, 150, 243, 0.3);
+    }
+    .pub-link img {
+      width: 20px;
+      height: 20px;
+    }
+    .view-all {
+      text-align: center;
+      margin-top: 2rem;
+    }
 
     /* Large screens */
     @media screen and (min-width: 1400px) {
@@ -187,13 +292,20 @@
       .right {
         padding: 2.5rem 1rem;
       }
+      .publication-card {
+        flex-direction: column;
+      }
+      .publication-image {
+        flex: 0 0 200px;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#">About</a>
-    <a href="#">Publications</a>
+    <a href="#" class="active">About</a>
+    <a href="#publications-section">Publications</a>
     <a href="#">Education</a>
     <a href="#">Experience</a>
   </nav>
@@ -218,5 +330,64 @@
       <a class="btn" href="#">Download CV</a>
     </div>
   </div>
+  
+  <!-- Publications Section -->
+  <section id="publications-section" class="publications-section">
+    <div class="publications-container">
+      <h2 class="section-title">Publications</h2>
+      
+      <!-- 2022 Publications -->
+      <h3 class="publication-year">2022</h3>
+      
+      <div class="publication-card">
+        <div class="publication-image">
+          <img src="assets/publication1.png" alt="Superhero Pose Publication Teaser" />
+        </div>
+        <div class="publication-content">
+          <div class="publication-text">
+            <p><b>Sadek, N.</b>, Elagroudy, P., Khalil, A., & Abdennadher, S. The Superhero Pose: Enhancing Physical Performance in Exergames by Embodying Celebrity Avatars in Virtual Reality. In Proceedings of the Nordic Human-Computer Interaction Conference (<b>NordiCHI'22</b>), 2022.</p>
+          </div>
+          <div class="publication-links">
+            <a href="#" class="pub-link">
+              <img src="assets/link-icon.png" alt="Link Icon" />
+              <span>Website</span>
+            </a>
+            <a href="#" class="pub-link">
+              <img src="assets/pdf-icon.png" alt="PDF Icon" />
+              <span>PDF</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 2021 Publications -->
+      <h3 class="publication-year">2021</h3>
+      
+      <div class="publication-card">
+        <div class="publication-image">
+          <img src="assets/publication2.png" alt="Give-Me-A-Hand Publication Teaser" />
+        </div>
+        <div class="publication-content">
+          <div class="publication-text">
+            <p>Yassien, A., Makled, E., Elagroudy, P., <b>Sadek, N.</b>, & Abdennadher, S. Give-Me-A-Hand: The Effect of Partner's Gender on Collaboration Quality in Virtual Reality. In Extended Abstracts of the ACM Conference on Human Factors in Computing Systems (<b>CHI EA'21</b>), 2021.</p>
+          </div>
+          <div class="publication-links">
+            <a href="#" class="pub-link">
+              <img src="assets/link-icon.png" alt="Link Icon" />
+              <span>Website</span>
+            </a>
+            <a href="#" class="pub-link">
+              <img src="assets/pdf-icon.png" alt="PDF Icon" />
+              <span>PDF</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="view-all">
+        <a href="publications.html" class="btn">View All Publications</a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
