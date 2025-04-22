@@ -99,7 +99,11 @@
       font-size: 1rem;
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1400px) and (min-width: 1024px) {
+      .right {
+        width: 360px;
+        padding: 2.5rem 1rem;
+      }
       .right img.profile {
         width: 190px;
         height: 190px;
@@ -114,6 +118,12 @@
       .btn {
         font-size: 1.1rem;
         padding: 0.8rem 1.5rem;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .right {
+        width: 100%;
       }
     }
 
