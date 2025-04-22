@@ -316,6 +316,80 @@
       font-style: italic;
       color: #bbdefb;
     }
+    
+    /* Experience Section */
+    .experience-section {
+      background-color: #1e3057;
+      padding: 4rem 2rem;
+      box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .experience-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .experience-item {
+      margin-bottom: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .experience-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .experience-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .experience-title {
+      font-size: 1.5rem;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    .experience-company {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #e0e0e0;
+      margin-bottom: 1rem;
+    }
+    .experience-date {
+      color: #64b5f6;
+      font-weight: bold;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .experience-description {
+      line-height: 1.6;
+    }
+    .experience-description ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .experience-description li {
+      margin-bottom: 0.5rem;
+    }
+    .experience-description h4 {
+      color: #64b5f6;
+      margin: 1.2rem 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .experience-description p {
+      margin-bottom: 0.8rem;
+    }
+    .course-title {
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    .course-details {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(100, 181, 246, 0.3);
+    }
 
     /* Large screens */
     @media screen and (min-width: 1400px) {
@@ -398,6 +472,12 @@
       .education-date {
         margin-bottom: 0.5rem;
       }
+      .experience-header {
+        flex-direction: column;
+      }
+      .experience-date {
+        margin-bottom: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -406,7 +486,7 @@
     <a href="#about-section">About</a>
     <a href="#publications-section">Publications</a>
     <a href="#education-section">Education</a>
-    <a href="#">Experience</a>
+    <a href="#experience-section">Experience</a>
   </nav>
   <div class="container">
     <div class="left">
@@ -503,84 +583,3 @@
       </div>
       
       <div class="view-all">
-        <a href="publications.html" class="btn">View All Publications</a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Education Section -->
-  <section id="education-section" class="education-section">
-    <div class="education-container">
-      <h2 class="section-title">Education</h2>
-      
-      <div class="education-item">
-        <div class="education-date">Nov 2023 - Present</div>
-        <div class="education-details">
-          <h3>PhD in Human-Computer Interaction</h3>
-          <div class="education-institution">Exertion Games Lab, Monash University, Australia</div>
-        </div>
-      </div>
-      
-      <div class="education-item">
-        <div class="education-date">Feb 2021 - Feb 2023</div>
-        <div class="education-details">
-          <h3>MSc in Computer Science and Engineering</h3>
-          <div class="education-institution">German University in Cairo (GUC)</div>
-          <div class="education-grade">Excellent with High Honors</div>
-        </div>
-      </div>
-      
-      <div class="education-item">
-        <div class="education-date">Oct 2015 - July 2020</div>
-        <div class="education-details">
-          <h3>BSc in Computer Science and Engineering</h3>
-          <div class="education-institution">German University in Cairo (GUC)</div>
-          <div class="education-grade">Excellent with Honors</div>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-
-  <!-- JavaScript for active navigation -->
-  <script>
-    // Get all the navigation links
-    const navLinks = document.querySelectorAll('nav a');
-    
-    // Function to set active link based on click
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        // Remove active class from all links
-        navLinks.forEach(l => l.classList.remove('active'));
-        
-        // Add active class to the clicked link
-        this.classList.add('active');
-      });
-    });
-    
-    // Function to set active link based on scroll position
-    window.addEventListener('scroll', function() {
-      const scrollPosition = window.scrollY;
-      
-      // Get all sections
-      const aboutSection = document.getElementById('about-section');
-      const publicationsSection = document.getElementById('publications-section');
-      const educationSection = document.getElementById('education-section');
-      
-      // Check which section is in view
-      if (educationSection && scrollPosition >= educationSection.offsetTop - 100) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        document.querySelector('nav a[href="#education-section"]').classList.add('active');
-      } else if (publicationsSection && scrollPosition >= publicationsSection.offsetTop - 100) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        document.querySelector('nav a[href="#publications-section"]').classList.add('active');
-      } else if (aboutSection && scrollPosition >= aboutSection.offsetTop - 100) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        document.querySelector('nav a[href="#about-section"]').classList.add('active');
-      } else {
-        navLinks.forEach(l => l.classList.remove('active'));
-      }
-    });
-  </script>
-</body>
-</html>
