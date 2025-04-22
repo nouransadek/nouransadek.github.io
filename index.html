@@ -19,41 +19,36 @@
       min-height: 100vh;
     }
     nav {
-      background: linear-gradient(to right, #1e3057, #2a4369);
+      background: #1e3057;
       padding: 1rem;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
     nav a {
       margin: 0 1rem;
       text-decoration: none;
       color: #ffffff;
       font-weight: bold;
-      transition: all 0.3s ease;
-      position: relative;
-      padding: 0.5rem 0;
+      transition: color 0.3s ease;
     }
     nav a:hover {
       color: #64b5f6;
     }
     nav a.active {
       color: #64b5f6;
+      position: relative;
     }
-    nav a::after {
+    nav a.active::after {
       content: '';
       position: absolute;
       bottom: -5px;
       left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(to right, #64b5f6, #2196f3);
-      transition: width 0.3s ease;
-    }
-    nav a:hover::after, nav a.active::after {
       width: 100%;
+      height: 2px;
+      background-color: #64b5f6;
     }
     .container {
       display: flex;
@@ -66,16 +61,6 @@
       background-size: cover;
       position: relative;
       min-height: 400px;
-      box-shadow: inset 0 0 100px rgba(20, 36, 61, 0.6);
-    }
-    .left::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(32, 58, 109, 0.3) 0%, rgba(20, 36, 61, 0.3) 100%);
     }
     .intro {
       position: absolute;
@@ -87,22 +72,20 @@
       font-size: 1.3rem;
       letter-spacing: 2px;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-      color: #64b5f6;
     }
     .intro h1 {
       font-size: clamp(2.5rem, 5vw, 3.5rem);
       margin-top: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
     .right {
-      background: linear-gradient(135deg, #203a6d 0%, #2a4369 100%);
+      background-color: #203a6d;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 2rem;
       width: clamp(300px, 25vw, 400px);
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     }
     .right img.profile {
       width: clamp(150px, 15vw, 200px);
@@ -111,11 +94,6 @@
       object-fit: cover;
       margin-bottom: 1.5rem;
       border: 3px solid #ffffff;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-    }
-    .right img.profile:hover {
-      transform: scale(1.05);
     }
     .email {
       text-align: center;
@@ -123,7 +101,6 @@
       margin-bottom: 1.5rem;
       font-size: clamp(0.9rem, 1vw, 1.1rem);
       word-break: break-word;
-      color: #b3e5fc;
     }
     .socials {
       display: flex;
@@ -131,41 +108,29 @@
       gap: clamp(15px, 2vw, 25px);
       margin-bottom: 1.5rem;
     }
-    .socials a {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      padding: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
     .socials img {
       width: clamp(28px, 3vw, 38px);
       height: clamp(28px, 3vw, 38px);
       transition: transform 0.3s ease;
     }
-    .socials a:hover {
-      background: rgba(100, 181, 246, 0.2);
-      transform: translateY(-3px);
+    .socials img:hover {
+      transform: scale(1.1);
     }
     .btn {
       display: inline-block;
       margin-top: 1rem;
       padding: 0.7rem 1.4rem;
-      background: linear-gradient(to right, #2196f3, #64b5f6);
-      color: #fff;
+      background: #fff;
+      color: #000;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 25px;
+      border-radius: 5px;
       font-size: clamp(0.9rem, 1vw, 1.1rem);
       transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
     .btn:hover {
-      background: linear-gradient(to right, #1e88e5, #42a5f5);
+      background: #e0e0e0;
       transform: translateY(-2px);
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
     }
     
     /* About Section */
@@ -173,24 +138,10 @@
       background-color: #2c4975;
       padding: 4rem 2rem;
       box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-    .about-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(44, 73, 117, 0.7) 0%, rgba(32, 58, 109, 0.7) 100%);
-      z-index: 0;
     }
     .about-container {
       max-width: 1000px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
     }
     .section-title {
       font-size: clamp(2rem, 5vw, 2.5rem);
@@ -213,10 +164,6 @@
       font-size: 1.1rem;
       line-height: 1.7;
       margin-bottom: 1.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .about-text p {
       margin-bottom: 1.2rem;
@@ -236,7 +183,6 @@
       padding-top: 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       font-style: italic;
-      color: #bbdefb;
     }
     
     /* Publications Section */
@@ -255,31 +201,19 @@
       color: #64b5f6;
       border-left: 4px solid #64b5f6;
       padding-left: 1rem;
-      position: relative;
-    }
-    .publication-year::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 4px;
-      width: 30%;
-      height: 1px;
-      background: linear-gradient(to right, #64b5f6, transparent);
     }
     .publication-card {
       display: flex;
       background: rgba(44, 73, 117, 0.8);
-      border-radius: 10px;
+      border-radius: 8px;
       overflow: hidden;
       margin-bottom: 2rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      border-left: 3px solid transparent;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     .publication-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      border-left: 3px solid #64b5f6;
     }
     .publication-image {
       flex: 0 0 250px;
@@ -318,14 +252,13 @@
       gap: 0.5rem;
       padding: 0.5rem 1rem;
       background: rgba(33, 150, 243, 0.1);
-      border-radius: 20px;
+      border-radius: 4px;
       text-decoration: none;
       color: white;
-      transition: all 0.3s ease;
+      transition: background 0.3s ease;
     }
     .pub-link:hover {
       background: rgba(33, 150, 243, 0.3);
-      transform: translateY(-2px);
     }
     .pub-link img {
       width: 20px;
@@ -339,7 +272,6 @@
     /* Education Section */
     .education-section {
       background-color: #2a4369;
-      background-image: linear-gradient(135deg, #2a4369 0%, #355990 100%);
       padding: 4rem 2rem;
       box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.1);
     }
@@ -353,10 +285,6 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       flex-direction: row;
-      transition: transform 0.3s ease;
-    }
-    .education-item:hover {
-      transform: translateX(5px);
     }
     .education-item:last-child {
       border-bottom: none;
@@ -369,26 +297,9 @@
       color: #64b5f6;
       font-size: 1.1rem;
       padding-top: 0.2rem;
-      position: relative;
-    }
-    .education-date::after {
-      content: '•';
-      position: absolute;
-      right: 20px;
-      color: #64b5f6;
-      font-size: 1.5rem;
     }
     .education-details {
       flex: 1;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      border-left: 3px solid transparent;
-    }
-    .education-item:hover .education-details {
-      border-left: 3px solid #64b5f6;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .education-details h3 {
       font-size: 1.4rem;
@@ -404,16 +315,11 @@
       font-size: 1rem;
       font-style: italic;
       color: #bbdefb;
-      display: inline-block;
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      background: rgba(100, 181, 246, 0.1);
     }
     
     /* Experience Section */
     .experience-section {
       background-color: #1e3057;
-      background-image: linear-gradient(135deg, #1e3057 0%, #284272 100%);
       padding: 4rem 2rem;
       box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.1);
     }
@@ -423,30 +329,19 @@
     }
     .experience-item {
       margin-bottom: 3rem;
-      padding: 1.5rem;
-      border-radius: 10px;
-      background: rgba(44, 73, 117, 0.5);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      border-left: 3px solid transparent;
-      position: relative;
-      overflow: hidden;
-    }
-    .experience-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      border-left: 3px solid #64b5f6;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     .experience-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
       margin-bottom: 0;
     }
     .experience-header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 1rem;
     }
     .experience-title {
       font-size: 1.5rem;
@@ -458,26 +353,13 @@
       font-size: 1.1rem;
       font-style: italic;
       color: #e0e0e0;
-      margin-bottom: 0.5rem;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-    .experience-company::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: #64b5f6;
-      font-size: 1.5rem;
-      top: -0.3rem;
+      margin-bottom: 1rem;
     }
     .experience-date {
       color: #64b5f6;
       font-weight: bold;
       font-size: 1.1rem;
       flex-shrink: 0;
-      background: rgba(100, 181, 246, 0.1);
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
     }
     .experience-description {
       line-height: 1.6;
@@ -487,28 +369,12 @@
       margin-bottom: 1rem;
     }
     .experience-description li {
-      margin-bottom: 0.8rem;
-      position: relative;
-    }
-    .experience-description li::marker {
-      color: #64b5f6;
+      margin-bottom: 0.5rem;
     }
     .experience-description h4 {
       color: #64b5f6;
-      margin: 1.5rem 0 1rem 0;
-      font-size: 1.2rem;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-    .experience-description h4::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(to right, #64b5f6, transparent);
+      margin: 1.2rem 0 0.5rem 0;
+      font-size: 1.1rem;
     }
     .experience-description p {
       margin-bottom: 0.8rem;
@@ -516,62 +382,13 @@
     .course-title {
       color: #ffffff;
       font-weight: bold;
-      margin-bottom: 0.5rem;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-    .course-title::before {
-      content: '►';
-      position: absolute;
-      left: 0;
-      color: #64b5f6;
-      font-size: 0.8rem;
-      top: 0.3rem;
+      margin-bottom: 0.3rem;
     }
     .course-details {
       margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      border-left: 2px solid rgba(100, 181, 246, 0.3);
-    }
-    .course-details p {
-      position: relative;
+      margin-bottom: 1rem;
       padding-left: 1rem;
-    }
-    .course-details p::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: #bbdefb;
-    }
-
-    /* Shine effect for cards */
-    .publication-card::after,
-    .experience-item::after,
-    .education-details::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.05) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      transform: rotate(30deg);
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-    .publication-card:hover::after,
-    .experience-item:hover::after,
-    .education-details:hover::after {
-      opacity: 1;
+      border-left: 2px solid rgba(100, 181, 246, 0.3);
     }
 
     /* Large screens */
@@ -660,9 +477,213 @@
       }
       .experience-date {
         margin-bottom: 0.5rem;
-        align-self: flex-start;
       }
     }
+    /* Complete styling with improved sections */
+
+/* About Section - Light Lavender */
+.about-section {
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%); /* Light lavender */
+  color: #283593; /* Dark blue text for contrast */
+}
+.about-text a {
+  color: #3949ab; /* Medium blue links */
+}
+.about-text a:hover {
+  color: #1a237e; /* Dark blue on hover */
+}
+.about-section .section-title {
+  color: #1a237e; /* Dark blue title */
+}
+.about-text {
+  color: #3c4043; /* Dark gray text for readability */
+}
+.supervisors {
+  color: #5c6bc0; /* Medium indigo */
+}
+
+/* Publications Section - Softer Light Blue */
+.publications-section {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); /* Lighter blue */
+  color: #0d47a1; /* Dark blue text */
+}
+.publications-section .section-title {
+  color: #0d47a1; /* Dark blue title */
+}
+.publication-year {
+  color: #1976d2; /* Medium blue */
+  border-left: 4px solid #1976d2;
+}
+.publication-text {
+  color: #263238; /* Very dark blue-gray */
+}
+.publication-text b {
+  color: #1565c0; /* Darker blue */
+}
+.pub-link {
+  color: #0d47a1; /* Dark blue */
+}
+
+/* Education Section - Light Purple */
+.education-section {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); /* Light purple */
+  color: #4a148c; /* Dark purple text */
+}
+.education-section .section-title {
+  color: #4a148c; /* Dark purple title */
+}
+.education-date {
+  color: #6a1b9a; /* Medium purple */
+}
+.education-details h3 {
+  color: #4a148c; /* Dark purple */
+}
+.education-institution {
+  color: #4a148c; /* Dark purple */
+}
+
+/* Highlighted Grades - Make them stand out significantly */
+.education-grade {
+  color: #ffffff; /* White text */
+  background: #7b1fa2; /* Vibrant purple background */
+  padding: 0.3rem 0.9rem;
+  border-radius: 4px;
+  margin-top: 0.8rem;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-left: 3px solid #4a148c; /* Dark purple accent */
+}
+
+/* Experience Section - Completely Redesigned */
+.experience-section {
+  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%); /* Light blue */
+  color: #01579b; /* Dark blue text */
+}
+
+.experience-section .section-title {
+  color: #01579b; /* Dark blue title */
+}
+
+/* Main experience card styling */
+.experience-item {
+  background: rgba(255, 255, 255, 0.7); /* Whiter, cleaner background */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1.8rem;
+  margin-bottom: 2.5rem;
+  border-left: 4px solid #0288d1; /* Medium blue accent */
+}
+
+/* Header styling */
+.experience-header {
+  border-bottom: 1px solid rgba(3, 169, 244, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.experience-title {
+  color: #01579b; /* Dark blue */
+  font-size: 1.6rem;
+}
+
+.experience-company {
+  color: #0277bd; /* Medium-dark blue */
+  font-size: 1.15rem;
+}
+
+.experience-date {
+  color: #ffffff; /* White text */
+  background: #0288d1; /* Medium blue background */
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-weight: normal;
+}
+
+/* Course sections styling */
+.experience-description h4 {
+  color: #0277bd; /* Medium-dark blue */
+  font-size: 1.25rem;
+  margin: 1.5rem 0 1rem 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.course-title {
+  color: #01579b; /* Dark blue */
+  font-size: 1.1rem;
+  margin: 1.2rem 0 0.7rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.course-title::before {
+  content: '→'; /* Arrow instead of bullet */
+  position: absolute;
+  left: 0;
+  color: #039be5; /* Bright blue */
+  font-size: 1rem;
+}
+
+/* Course details styling - completely redone */
+.course-details {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  padding: 1.2rem 1.5rem;
+  margin: 0 0 1.5rem 1.2rem;
+  border-left: 3px solid #03a9f4; /* Light blue */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.course-details p {
+  color: #333333; /* Dark gray text for readability */
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.course-details p::before {
+  content: '•'; /* Simple clean bullet */
+  position: absolute;
+  left: 0;
+  color: #03a9f4; /* Light blue */
+  font-weight: bold;
+}
+
+/* List items styling */
+.experience-description ul {
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  list-style-type: none; /* Remove default bullets */
+}
+
+.experience-description li {
+  color: #333333; /* Dark gray text */
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.experience-description li::before {
+  content: '•'; /* Simple clean bullet */
+  position: absolute;
+  left: 0;
+  color: #03a9f4; /* Light blue */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Fixes for readability with light backgrounds */
+.publication-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 3px solid rgba(25, 118, 210, 0.4);
+}
+
+/* Consistent section title styling */
+.section-title::after {
+  background: linear-gradient(to right, #64b5f6, #2196f3);
+}
   </style>
 </head>
 <body>
@@ -732,7 +753,7 @@
           <div class="publication-links">
             <a href="#" class="pub-link">
               <img src="assets/link-icon.png" alt="Link Icon" />
-              <span>Website</span>
+              <span>Link</span>
             </a>
             <a href="#" class="pub-link">
               <img src="assets/pdf-icon.png" alt="PDF Icon" />
@@ -756,7 +777,7 @@
           <div class="publication-links">
             <a href="#" class="pub-link">
               <img src="assets/link-icon.png" alt="Link Icon" />
-              <span>Website</span>
+              <span>Link</span>
             </a>
             <a href="#" class="pub-link">
               <img src="assets/pdf-icon.png" alt="PDF Icon" />
@@ -827,7 +848,7 @@
           <div class="course-details">
             <p>Delivered hands-on lab sessions covering Unity animation systems, physics integration, UI development, and scene composition.</p>
             <p>Mentored students through the design and implementation of gameplay-focused projects, including endless runners and narrative-driven experiences.</p>
-            <p>Supported students in creating polished final projects inspired by commercial titles such as Apex Legends and The Legend of Zelda: Breath of the Wild.</p>
+            <p>Supported students in creating polished final projects inspired by commercial titles such as Apex Legends and The Legend of Zelda: Breath of the Wild, providing technical feedback and design mentorship throughout the process.</p>
           </div>
           
           <div class="course-title">Software Engineering (MERN Stack)</div>
