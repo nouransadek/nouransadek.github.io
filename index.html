@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nouran 'Nora' Sadek</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url('assets/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4rem;
+    }
+    .intro {
+      font-size: 2rem;
+    }
+    .intro h1 {
+      font-size: 3rem;
+      margin-top: 1rem;
+    }
+    .sidebar {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+    .sidebar img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .sidebar a {
+      display: inline-block;
+      margin: 0.5rem;
+    }
+    .email {
+      margin: 1rem 0;
+      font-style: italic;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#">About</a>
+    <a href="#">Publications</a>
+    <a href="#">Education</a>
+    <a href="#">Experience</a>
+  </nav>
+  <div class="content">
+    <div class="intro">
+      <div>HELLO, I’M</div>
+      <h1>Nouran 'Nora' Sadek</h1>
+    </div>
+    <div class="sidebar">
+      <img src="assets/profile.jpg" alt="Profile Picture" />
+      <div class="email">nouran@exertiongameslab.org</div>
+      <div>
+        <a href="https://au.linkedin.com/in/nouransadek" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30" />
+        </a>
+        <a href="https://scholar.google.com/citations?user=XqMtYikAAAAJ&hl=en" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.png" width="30" />
+        </a>
+      </div>
+      <!-- <a class="btn" href="assets/NouranSadek_CV.pdf" download>Download CV</a> -->
+    </div>
+  </div>
+</body>
+</html>
