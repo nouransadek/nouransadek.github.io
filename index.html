@@ -32,6 +32,7 @@
     .container {
       display: flex;
       height: calc(100vh - 60px);
+      flex-direction: row;
     }
     .left {
       flex: 2;
@@ -94,6 +95,24 @@
       font-weight: bold;
       border-radius: 5px;
       font-size: 1rem;
+    }
+
+    /* Responsive scaling for smaller screens */
+    @media screen and (max-width: 1024px) {
+      .socials img {
+        width: 32px;
+        height: 32px;
+      }
+      .btn {
+        font-size: 1.1rem;
+      }
+      .email {
+        font-size: 1.05rem;
+      }
+      .right img.profile {
+        width: 180px;
+        height: 180px;
+      }
     }
   </style>
 </head>
