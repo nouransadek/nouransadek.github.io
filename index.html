@@ -13,14 +13,13 @@
     body {
       font-family: Arial, sans-serif;
       color: white;
-      background: url('assets/background.jpg') no-repeat center center fixed;
-      background-size: cover;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      background: #0f172a;
     }
     nav {
-      background: rgba(0, 0, 0, 0.6);
+      background: #1e293b;
       padding: 1rem;
       text-align: center;
     }
@@ -30,40 +29,55 @@
       color: #ffffff;
       font-weight: bold;
     }
-    .content {
-      flex: 1;
+    .container {
       display: flex;
-      justify-content: space-between;
+      flex: 1;
+      height: calc(100vh - 60px);
+    }
+    .left {
+      flex: 2;
+      background: url('assets/background.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
       align-items: center;
-      padding: 4rem;
+      padding-left: 5rem;
     }
     .intro {
-      font-size: 2rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    .intro div {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
     }
     .intro h1 {
       font-size: 3rem;
       margin-top: 1rem;
     }
-    .sidebar {
-      background-color: rgba(0, 0, 0, 0.6);
+    .right {
+      flex: 1;
+      background-color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      width: 300px;
     }
-    .sidebar img {
+    .right img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-    }
-    .sidebar a {
-      display: inline-block;
-      margin: 0.5rem;
+      margin-bottom: 1rem;
     }
     .email {
-      margin: 1rem 0;
+      text-align: center;
       font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .socials a {
+      margin: 0 0.5rem;
     }
     .btn {
       display: inline-block;
@@ -71,9 +85,9 @@
       padding: 0.5rem 1rem;
       background: #fff;
       color: #000;
-      border: none;
       text-decoration: none;
       font-weight: bold;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -84,15 +98,17 @@
     <a href="#">Education</a>
     <a href="#">Experience</a>
   </nav>
-  <div class="content">
-    <div class="intro">
-      <div>HELLO, I’M</div>
-      <h1>Nouran 'Nora' Sadek</h1>
+  <div class="container">
+    <div class="left">
+      <div class="intro">
+        <div>HELLO, I’M</div>
+        <h1>Nouran 'Nora' Sadek</h1>
+      </div>
     </div>
-    <div class="sidebar">
+    <div class="right">
       <img src="assets/profile.jpg" alt="Profile Picture" />
       <div class="email">nouran@exertiongameslab.org</div>
-      <div>
+      <div class="socials">
         <a href="https://au.linkedin.com/in/nouransadek" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="30" />
         </a>
@@ -100,7 +116,7 @@
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.png" width="30" />
         </a>
       </div>
-      <!-- <a class="btn" href="assets/NouranSadek_CV.pdf" download>Download CV</a> -->
+      <a class="btn" href="#">Download CV</a>
     </div>
   </div>
 </body>
