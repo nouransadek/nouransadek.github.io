@@ -583,3 +583,170 @@
       </div>
       
       <div class="view-all">
+        <a href="publications.html" class="btn">View All Publications</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Education Section -->
+  <section id="education-section" class="education-section">
+    <div class="education-container">
+      <h2 class="section-title">Education</h2>
+      
+      <div class="education-item">
+        <div class="education-date">Nov 2023 - Present</div>
+        <div class="education-details">
+          <h3>PhD in Human-Computer Interaction</h3>
+          <div class="education-institution">Exertion Games Lab, Monash University, Australia</div>
+        </div>
+      </div>
+      
+      <div class="education-item">
+        <div class="education-date">Feb 2021 - Feb 2023</div>
+        <div class="education-details">
+          <h3>MSc in Computer Science and Engineering</h3>
+          <div class="education-institution">German University in Cairo (GUC)</div>
+          <div class="education-grade">Excellent with High Honors</div>
+        </div>
+      </div>
+      
+      <div class="education-item">
+        <div class="education-date">Oct 2015 - July 2020</div>
+        <div class="education-details">
+          <h3>BSc in Computer Science and Engineering</h3>
+          <div class="education-institution">German University in Cairo (GUC)</div>
+          <div class="education-grade">Excellent with Honors</div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Experience Section -->
+  <section id="experience-section" class="experience-section">
+    <div class="experience-container">
+      <h2 class="section-title">Experience</h2>
+      
+      <!-- Teaching & Research Assistant -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <div class="experience-title">Teaching & Research Assistant</div>
+            <div class="experience-company">German University in Cairo (GUC), Egypt</div>
+          </div>
+          <div class="experience-date">Sept 2020 – Feb 2022</div>
+        </div>
+        <div class="experience-description">
+          <h4>Courses Taught:</h4>
+          
+          <div class="course-title">Game Development (Unity 3D)</div>
+          <div class="course-details">
+            <p>Delivered hands-on lab sessions covering Unity animation systems, physics integration, UI development, and scene composition.</p>
+            <p>Mentored students through the design and implementation of gameplay-focused projects, including endless runners and narrative-driven experiences.</p>
+            <p>Supported students in creating polished final projects inspired by commercial titles such as Apex Legends and The Legend of Zelda: Breath of the Wild, providing technical feedback and design mentorship throughout the process.</p>
+          </div>
+          
+          <div class="course-title">Software Engineering (MERN Stack)</div>
+          <div class="course-details">
+            <p>Taught full-stack web development using MongoDB, Express, React, and Node.js.</p>
+            <p>Supervised the development of a classroom reservation platform for university staff, guiding students through backend logic, frontend workflows, and deployment considerations.</p>
+            <p>Designed lab activities and co-authored project specifications and assessment rubrics.</p>
+          </div>
+          
+          <div class="course-title">Advanced Databases</div>
+          <div class="course-details">
+            <p>Led tutorials on advanced relational design, indexing strategies, and query optimization techniques.</p>
+            <p>Evaluated coursework, projects, and exams with a focus on conceptual understanding and technical accuracy.</p>
+          </div>
+          
+          <ul>
+            <li>Supervised undergraduate graduation projects and supported HCI-related research</li>
+            <li>Developed test cases and grading rubrics for all assigned courses</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Junior Teaching Assistant -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <div class="experience-title">Junior Teaching Assistant</div>
+            <div class="experience-company">German University in Cairo (GUC), Egypt</div>
+          </div>
+          <div class="experience-date">Feb 2017 – April 2019</div>
+        </div>
+        <div class="experience-description">
+          <ul>
+            <li>Supported foundational computing courses including Python, Java, Data Structures, Prolog, and Haskell</li>
+            <li>Assisted students during lab sessions and tutorials with programming concepts, debugging, and problem-solving</li>
+            <li>Contributed to grading and provided in-lab guidance across multiple student groups</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Game Development Intern -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <div class="experience-title">Game Development Intern</div>
+            <div class="experience-company">Explore Agora (Egypt-based EdTech Startup)</div>
+          </div>
+          <div class="experience-date">Summer 2017</div>
+        </div>
+        <div class="experience-description">
+          <ul>
+            <li>Contributed to the development of an Augmented Reality Android application designed for STEM education in schools</li>
+            <li>Collaborated with educators and designers to align technical implementation with curriculum goals</li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- JavaScript for active navigation -->
+  <script>
+    // Get all the navigation links
+    const navLinks = document.querySelectorAll('nav a');
+    
+    // Function to set active link based on click
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove('active'));
+        
+        // Add active class to the clicked link
+        this.classList.add('active');
+      });
+    });
+    
+    // Function to set active link based on scroll position
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      
+      // Get all sections
+      const aboutSection = document.getElementById('about-section');
+      const publicationsSection = document.getElementById('publications-section');
+      const educationSection = document.getElementById('education-section');
+      const experienceSection = document.getElementById('experience-section');
+      
+      // Check which section is in view
+      if (experienceSection && scrollPosition >= experienceSection.offsetTop - 100) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('nav a[href="#experience-section"]').classList.add('active');
+      } else if (educationSection && scrollPosition >= educationSection.offsetTop - 100) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('nav a[href="#education-section"]').classList.add('active');
+      } else if (publicationsSection && scrollPosition >= publicationsSection.offsetTop - 100) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('nav a[href="#publications-section"]').classList.add('active');
+      } else if (aboutSection && scrollPosition >= aboutSection.offsetTop - 100) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        document.querySelector('nav a[href="#about-section"]').classList.add('active');
+      } else {
+        navLinks.forEach(l => l.classList.remove('active'));
+      }
+    });
+  </script>
+</body>
+</html>
